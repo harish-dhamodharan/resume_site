@@ -1,0 +1,20 @@
+@import "./../../../variables/color-scheme.scss";
+.slider {
+    height: 100vh;
+    width: 100vw;
+    background-color: $contrast5   ;
+    color: $contrast1;
+    .slider-content {
+        height: 100vh;
+        width: 100vw;
+        .name {
+            color: $primary-color3;
+        }
+        .designation {
+            color: $contrast2;
+        }
+        & > div {
+            padding-left: 5vw;
+        }
+    }
+}
