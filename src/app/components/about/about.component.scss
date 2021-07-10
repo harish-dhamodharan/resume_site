@@ -11,14 +11,44 @@
     .panel1 {
         color: $contrast1;
         background-color: $contrast5;
+        & > h2 {
+            width: -webkit-fill-available;
+            border-bottom: 2px solid transparent;
+            text-align: end;
+        }
+        & > h2:hover {
+            border-bottom: 2px solid $contrast1;
+            font-weight: 700;
+            transition: all 500ms;
+        }
     }
     .panel2 {
         color: $contrast5;
         background-color: $contrast1;
+        & > h2 {
+            width: -webkit-fill-available;
+            border-bottom: 2px solid transparent;
+            text-align: start;
+        }
+        & > h2:hover {
+            border-bottom: 2px solid $contrast5;
+            font-weight: 700;
+            transition: all 500ms;
+        }
     }
     .panel3 {
         color: $contrast1;
         background-color: $contrast5;
+        & > h2 {
+            width: -webkit-fill-available;
+            border-bottom: 2px solid transparent;
+            text-align: end;
+        }
+        & > h2:hover {
+            border-bottom: 2px solid $contrast1;
+            font-weight: 700;
+            transition: all 500ms;
+        }
     }
 }
 
@@ -30,6 +60,7 @@ h2 {
 ul {
     list-style-type: none;
     padding: 1rem;
+    width: 100%;
     & li {
         padding: .5rem 0 .5rem 0;
     }
@@ -41,4 +72,16 @@ ul {
         text-align: center;
         width: max-content;
     }    
+}
+
+.tech {
+    & > li {
+        float: right;
+        width: 100%;
+    }
+    & > li:hover {
+        padding-right: 20px;
+        transition: all 400ms;
+        font-weight: 600;
+    }
 }
