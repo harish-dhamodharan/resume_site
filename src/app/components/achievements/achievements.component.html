@@ -1,5 +1,58 @@
 <div class="slider">
     <div class="container">
-        <p>achievements works!</p>
+        <div class="row align-items-center">
+            <div class="col-11 col-md-3 achievements">
+                <h1 class="achievements text-center">{{page.name}}</h1>
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="row justify-content-center align-items-start">
+                <div class="col-11 col-md-5 d-flex flex-wrap flex-row align-items-center" *ngFor="let card of cards">
+                    <div class="cards" [class.open-close]="openedId == card.id">
+                        <div class="col-12 d-flex flex-row align-items-center">
+                            <i class="col-md-4 col-3 award-icon" *ngIf="card.icon == 'award'">
+                                <ng-container *ngTemplateOutlet="awardIcon"></ng-container>
+                            </i>
+                            <div class="col-md-7 col-8">
+                                <h3 class="col-12">{{card.award.name}}</h3>
+                                <h6 class="col-12">{{card.award.date}}</h6>
+                            </div>
+                            <div class="col-1 d-flex" [class.close-div]="openedId == card.id">
+                                <i class="arrow-icon" (click)="showMore(card)" *ngIf="openedId != card.id">
+                                    <svg viewBox="0 0 32 32">
+                                        <path
+                                            d="M32,16.009c0-0.267-0.11-0.522-0.293-0.714  l-9.899-9.999c-0.391-0.395-1.024-0.394-1.414,0c-0.391,0.394-0.391,1.034,0,1.428l8.193,8.275H1c-0.552,0-1,0.452-1,1.01  s0.448,1.01,1,1.01h27.586l-8.192,8.275c-0.391,0.394-0.39,1.034,0,1.428c0.391,0.394,1.024,0.394,1.414,0l9.899-9.999  C31.894,16.534,31.997,16.274,32,16.009z"
+                                            class="arrow-path" />
+                                    </svg>
+                                </i>
+                                <i class="close-icon" (click)="close()" *ngIf="openedId == card.id">
+                                    <svg viewBox="0 0 32 32">
+                                        <path class="close-path"
+                                            d="M16,0C7.163,0,0,7.163,0,16c0,8.836,7.163,16,16,16   c8.836,0,16-7.163,16-16C32,7.163,24.836,0,16,0z M16,30C8.268,30,2,23.732,2,16C2,8.268,8.268,2,16,2s14,6.268,14,14   C30,23.732,23.732,30,16,30z" />
+                                        <path class="close-path"
+                                            d="M22.729,21.271l-5.268-5.269l5.238-5.195   c0.395-0.391,0.395-1.024,0-1.414c-0.394-0.39-1.034-0.39-1.428,0l-5.231,5.188l-5.309-5.31c-0.394-0.396-1.034-0.396-1.428,0   c-0.394,0.395-0.394,1.037,0,1.432l5.301,5.302l-5.331,5.287c-0.394,0.391-0.394,1.024,0,1.414c0.394,0.391,1.034,0.391,1.429,0   l5.324-5.28l5.276,5.276c0.394,0.396,1.034,0.396,1.428,0C23.123,22.308,23.123,21.667,22.729,21.271z" />
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex flex-column align-items-center extra-info" *ngIf="openedId == card.id">
+                            <hr>
+                            <p>{{card.award.info}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+
+<ng-template #awardIcon>
+    <svg viewBox="-2 -2 36 36" x="0px" y="0px">
+        <g class="icons" fill-rule="evenodd" sketch:type="MSPage">
+            <path
+                d="M16.0617547,11.6370769 L20.3594127,1 L25.9225158,3.24763956 L21.5556412,14.0560335 C20.0541056,12.7394375 18.1549584,11.865267 16.0617547,11.6370769 L16.0617547,11.6370769 L16.0617547,11.6370769 Z M8.36920411,14.0617992 L4,3.24763956 L9.56310313,1 L13.861138,11.6380097 C11.7682487,11.8679764 9.86973167,12.7437786 8.36920411,14.0617992 L8.36920411,14.0617992 L8.36920411,14.0617992 Z M14.9657076,30.5776987 C19.9362704,30.5776987 23.9657076,26.5482614 23.9657076,21.5776987 C23.9657076,16.6071359 19.9362704,12.5776987 14.9657076,12.5776987 C9.99514486,12.5776987 5.96570761,16.6071359 5.96570761,21.5776987 C5.96570761,26.5482614 9.99514486,30.5776987 14.9657076,30.5776987 L14.9657076,30.5776987 L14.9657076,30.5776987 Z M14.9657076,24.2700064 L11.4657076,26.5776987 L12.9657076,22.5776987 L9.96570761,20.5776987 L13.4657076,20.5776987 L14.9657076,16.5776987 L16.4657076,20.5776987 L19.9657076,20.5776987 L16.9657076,22.5776987 L18.4657076,26.5776987 L14.9657076,24.2700064 L14.9657076,24.2700064 Z">
+            </path>
+        </g>
+    </svg>
+</ng-template>

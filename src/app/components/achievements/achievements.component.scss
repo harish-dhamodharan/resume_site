@@ -1,0 +1,144 @@
+@import "./../../../variables/color-scheme.scss";
+
+.slider {
+    height: 100%;
+    width: 100vw;
+    background-color: $light-color;
+    color: $contrast5;
+    padding: 5% 0 5% 0;
+    .achievements {
+        font-size: 10vw !important;
+        width: -webkit-fill-available;
+    }
+}
+
+.award-icon {
+    & > svg {
+        height: 10vw;
+        width: 10vw;
+        margin: 1rem;
+    }
+}
+
+.icons {
+    fill: $contrast1;
+    stroke: $contrast1;
+    stroke-width: 0;
+}
+
+.extra-margin {
+    margin: 1rem 0 1rem 0;
+}
+
+.pull-up {
+    z-index: 1;
+}
+
+.arrow-icon {
+    & > svg {
+        height: 70%;
+        width:  70%;
+        margin: .5rem;
+        transition: all 150ms;
+        & > .arrow-path {
+            fill: $contrast1;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        & > svg:hover {
+            transition: all 150ms;
+            width:  80% !important;
+        }
+    }
+}
+
+.close-div {
+    height: -webkit-fill-available;
+    align-self: baseline;
+}
+.close-icon {
+    & > svg {
+        height: 70%;
+        width:  70%;
+        margin: .5rem;
+        transition: all 150ms;
+        & > .close-path {
+            fill: $contrast1;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        & > svg:hover {
+            transition: all 150ms;
+            width:  80% !important;
+            height:  80% !important;
+        }
+    }
+}
+
+.cards {
+    background-color: $contrast5;
+    color: $contrast1;
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.extra-info {
+    padding: 0 2rem 1rem 2rem;
+    & > p {
+        animation: slide-down 500ms ease-in;
+    }
+    & > hr {
+        width: 100%;
+        height: 2px;
+        opacity: 1;
+        background-color: $contrast1;
+        transform-origin: left;
+        visibility: hidden;
+        animation: left-right 1500ms ease-in-out 400ms;
+    }
+}
+
+@keyframes left-right {
+    0% {
+        visibility: visible;
+        transform: scaleX(0);
+    }
+    50% {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+    100% {
+        visibility: visible;
+        transform: scaleX(0);
+    }
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+.open-close {
+    transition: height 500ms ease-in;
+    // animation: open-close 500ms ease;
+}
+
+@keyframes open-close {
+    0% {
+        opacity: 0;
+        transform: translateY(-30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
