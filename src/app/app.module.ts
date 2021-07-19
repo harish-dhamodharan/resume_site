@@ -8,6 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { AchievementsComponent } from './components/achievements/achievements.component';
 import { AboutComponent } from './components/about/about.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     TimelineComponent,
     AchievementsComponent,
-    AboutComponent
+    AboutComponent,
+    NavigationComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,

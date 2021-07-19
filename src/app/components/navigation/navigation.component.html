@@ -1,0 +1,30 @@
+<div class="hamburger" [class.show-menu]="toggleNavigation">
+    <div class="icon" [class.convert-icons]="toggleNavigation" (click)="toggleNav()"></div>
+    <div class="menu-items" [class.visible]="toggleNavigation">
+        <div class="d-flex flex-column">
+            <a href="#home">
+                Home
+            </a>
+        </div>
+        <div class="d-flex flex-column">
+            <a href="#about">
+                About
+            </a>
+        </div>
+        <div class="d-flex flex-column">
+            <a href="#timeline">
+                Timeline
+            </a>
+        </div>
+        <div class="d-flex flex-column">
+            <a href="#achievements">
+                Achievements
+            </a>
+        </div>
+        <div class="d-flex flex-column">
+            <a href="#contactme">
+                Contact me
+            </a>
+        </div>
+    </div>
+</div>

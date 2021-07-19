@@ -1,6 +1,9 @@
+<app-navigation></app-navigation>
 <div class="main-container">
-  <app-home></app-home>
-  <app-about></app-about>
-  <app-timeline></app-timeline>
-  <app-achievements></app-achievements>
+  <app-home id="home" #home></app-home>
+  <app-about id="about" #about></app-about>
+  <app-timeline id="timeline" #timeline></app-timeline>
+  <app-achievements id="achievements" #achievements></app-achievements>
+  <app-contact-me id="contactme" #contactme></app-contact-me>
 </div>
+<router-outlet></router-outlet>

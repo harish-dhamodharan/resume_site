@@ -23,20 +23,20 @@
         & .name {
             opacity: 0;
             transform: translateX(10%);
-            animation: fade-in-from-right 200ms ease-in 2200ms;
+            animation: fade-in-from-right 500ms ease-in 1500ms;
             animation-fill-mode: forwards;
         }
     }
     & .welcome {
         opacity: 0;
         transform: translateX(-10%);
-        animation: fade-in-from-left 200ms ease-in 2000ms;
+        animation: fade-in-from-left 500ms ease-in 1000ms;
         animation-fill-mode: forwards;
     }
     & .designation {
         opacity: 0;
         transform: translateX(-10%);
-        animation: fade-in-from-left 200ms ease-in 2400ms;
+        animation: fade-in-from-left 500ms ease-in 2000ms;
         animation-fill-mode: forwards;
     }
     // }
@@ -103,5 +103,13 @@
     100% {
         opacity: 1;
         transform: translateX(-0);
+    }
+}
+
+@media(max-width: 768px) {
+    .big-font { 
+        & h1 {
+            font-size: 5vh !important;
+        }
     }
 }
