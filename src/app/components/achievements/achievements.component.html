@@ -7,7 +7,8 @@
         </div>
         <div class="wrap">
             <div class="row justify-content-center align-items-start">
-                <div class="col-11 col-md-5 d-flex flex-wrap flex-row align-items-center" *ngFor="let card of cards">
+                <div data-aos="zoom-in-down" class="col-11 col-md-5 d-flex flex-wrap flex-row align-items-center"
+                    *ngFor="let card of cards">
                     <div class="cards" [class.open-close]="openedId == card.id">
                         <div class="col-12 d-flex flex-row align-items-center">
                             <i class="col-md-4 col-3 award-icon" *ngIf="card.icon == 'award'">
@@ -35,7 +36,8 @@
                                 </i>
                             </div>
                         </div>
-                        <div class="col-12 d-flex flex-column align-items-center extra-info" *ngIf="openedId == card.id">
+                        <div class="col-12 d-flex flex-column align-items-center extra-info"
+                            *ngIf="openedId == card.id">
                             <hr>
                             <p>{{card.award.info}}</p>
                         </div>
